@@ -50,3 +50,6 @@ mongoose.connection.once("open", () => {
     console.log(`server listening on port ${LISTEN_PORT}`);
   });
 });
+
+// Export the Express API so vercel can have access building a serverless app 😂
+module.exports = app;
