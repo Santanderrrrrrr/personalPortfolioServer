@@ -51,5 +51,5 @@ mongoose.connection.once("open", () => {
   });
 });
 
-// Export the Express API so vercel can have access building a serverless app 😂
+// Export the Express API so vercel can have access building a serverless app
 module.exports = app;
