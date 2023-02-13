@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "server handling emails sent to me and possibly other things",
   "main": "server.js",
-  
   "scripts": {
-    "test": "nodemon api/index.js",
+    "test": "nodemon index.js",
     "start": "node index.js"
   },
   "author": "Leon Omollo",

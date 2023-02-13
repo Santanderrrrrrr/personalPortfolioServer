@@ -2,9 +2,9 @@
 const LISTEN_PORT = process.env.PORT || 3005;
 
 //importing middleware
-const { logger, errorHandler } = require("../utils/middleware/logEvents");
+const { logger, errorHandler } = require("./utils/middleware/logEvents");
 const cors = require("cors");
-const { corsOptions, credentials } = require("../utils/middleware/corsConfig");
+const { corsOptions, credentials } = require("./utils/middleware/corsConfig");
 const cookieParser = require("cookie-parser");
 const { engine } = require("express-handlebars");
 const path = require("path");
@@ -13,7 +13,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require("../models/connection");
+require("./models/connection");
 
 //setting handlebars as the viewengine
 app.engine("handlebars", engine());
@@ -38,7 +38,7 @@ app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.status(200).send(`Request received, we're live`);
 });
-app.use("/sendToLeon", require("../routes/sendToLeon"));
+app.use("/sendToLeon", require("./routes/sendToLeon"));
 
 //errror handler
 app.use(errorHandler);
